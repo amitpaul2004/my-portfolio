@@ -161,3 +161,47 @@ body {
 .hero-title {
     text-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
+/* Scroll Indicator Styling */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.mouse-icon {
+    color: var(--text);
+    opacity: 0.6;
+    animation: scrollFloat 2s infinite ease-in-out;
+}
+
+.scroll-text {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--text);
+    opacity: 0.5;
+}
+
+/* Floating Animation */
+@keyframes scrollFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Hide on mobile if it clutters the screen
+@media (max-height: 700px) {
+    .scroll-indicator {
+        display: none;
+    }
+} */

@@ -117,3 +117,39 @@ window.addEventListener('mousemove', (e) => {
         ease: "power2.out"
     });
 });
+
+// Add this inside your existing DOMContentLoaded listener
+const scrollIndicator = document.querySelector('.scroll-indicator');
+
+// Merge mousemove listeners into one
+window.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // 1. Cursor Glow
+    gsap.to(glow, { x: x, y: y, duration: 0.8, ease: "power2.out" });
+
+    // 2. Parallax Effects
+    const moveX = (x - window.innerWidth / 2) * 0.01;
+    const moveY = (y - window.innerHeight / 2) * 0.01;
+
+    gsap.to(".bg-image-overlay", { x: moveX, y: moveY, duration: 1.5, ease: "power2.out" });
+    gsap.to(".bg-mesh", { x: -moveX * 0.5, y: -moveY * 0.5, duration: 2, ease: "power2.out" });
+});
+
+// Scroll Indicator Entry Animation
+gsap.from(scrollIndicator, { 
+    opacity: 0, 
+    y: -20, 
+    duration: 1, 
+    delay: 1.5, 
+    ease: "power2.out" 
+});
+
+// Click to scroll down
+scrollIndicator.addEventListener('click', () => {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+});
