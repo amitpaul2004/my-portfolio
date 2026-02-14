@@ -1,36 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profolio | Premium Experience</title>
+    <title>Profolio | Creative Dev</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">PRO<span>FOLIO</span></div>
-        <div class="availability-badge">
-            <span class="pulse-dot"></span> Available for freelance projects
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" class="nav-item">Projects</a></li>
-            <li><a href="#" class="nav-item">About</a></li>
-            <li><a href="#" class="nav-item">Contact</a></li>
-        </ul>
-        <button class="btn-hire">Hire Me</button>
+    <div id="theme-ripple"></div>
+
+    <header class="nav-container">
+        <nav class="dock">
+            <div class="logo" id="logo">
+                <span class="letter">P</span>
+                <span class="letter">R</span>
+                <span class="letter">O</span>
+                <span class="logo-accent">
+                    <span class="letter">F</span>
+                    <span class="letter">O</span>
+                    <span class="letter">L</span>
+                    <span class="letter">I</span>
+                    <span class="letter">O</span>
+                </span>
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="links">
+                <li><a href="#" class="nav-item">Projects</a></li>
+                <li><a href="#" class="nav-item">About</a></li>
+                <li><a href="#" class="nav-item">Contact</a></li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="actions">
+                <button id="theme-toggle" class="theme-btn">
+                    <div class="thumb">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </div>
+                </button>
+                <button class="hire-btn">Hire Me</button>
+            </div>
+        </nav>
     </header>
 
     <main class="hero">
-        <div class="hero-container">
-            <h1 class="reveal-text">Designing <span class="italic-blue">impactful</span> digital experiences.</h1>
-            <p class="hero-subtext">Full-stack designer and developer specialized in building modern web applications with a focus on performance, accessibility, and user-centric design.</p>
-            
-            <div class="cta-group">
-                <button class="btn-primary">View My Work <span class="arrow">→</span></button>
-                <button class="btn-secondary">Download CV <span class="icon">↓</span></button>
+        <div class="content">
+            <h1 class="hero-title">Designing <span class="italic">impactful</span> digital experiences.</h1>
+            <p class="hero-sub">Full-stack developer building modern web applications with a focus on performance and clean code.</p>
+            <div class="buttons">
+                <button class="btn-primary">View Work</button>
+                <button class="btn-secondary">Download CV</button>
             </div>
         </div>
     </main>
