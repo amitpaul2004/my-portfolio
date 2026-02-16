@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profolio | Interactive Experience</title>
+    <title>Amit Paul | Full-Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
     <div id="theme-ripple"></div>
     <div id="cursor-glow"></div>
     <canvas id="particle-canvas"></canvas>
+    
+    <div class="bg-container">
+        <div class="bg-mesh"></div>
+        <div class="bg-visual"></div>
+    </div>
 
     <header class="nav-wrapper">
         <nav class="dock">
             <div class="logo" id="logo">
-                <span class="letter">P</span><span class="letter">R</span><span class="letter">O</span>
+                <span class="letter">A</span><span class="letter">M</span><span class="letter">I</span><span class="letter">T</span>
                 <span class="logo-accent">
-                    <span class="letter">F</span><span class="letter">O</span><span class="letter">L</span><span class="letter">I</span><span class="letter">O</span>
+                    <span class="letter">P</span><span class="letter">A</span><span class="letter">U</span><span class="letter">L</span>
                 </span>
             </div>
-
             <div class="divider"></div>
-
             <ul class="nav-links">
-                <li><a href="#" class="nav-item">Projects</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
                 <li><a href="#" class="nav-item">About</a></li>
                 <li><a href="#" class="nav-item">Contact</a></li>
             </ul>
-
             <div class="divider"></div>
-
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-switch" aria-label="Toggle Theme">
                     <div class="switch-thumb">
@@ -46,30 +48,76 @@
     </header>
 
     <main class="hero">
-   <div class="hero-content">
-    <h1 class="hero-title">Designing <span class="accent">impactful</span><br>digital experiences.</h1>
-    <p class="hero-subtitle">Full-stack developer building modern web applications with tactile design and high performance.</p>
-    
-    <div class="hero-btns">
-        <button class="btn-main">View Work</button>
-        <button class="btn-sub">Download CV</button>
-    </div>
-
-    <div class="scroll-indicator">
-        <div class="mouse-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-            </svg>
+        <div class="hero-content">
+            <h1 class="hero-title">Designing <span class="accent">impactful</span><br>digital experiences.</h1>
+            <p class="hero-subtitle">Full-stack developer at JIS University specialized in building modern web applications with tactile design.</p>
+            <div class="hero-btns">
+                <button class="btn-main">View Work</button>
+                <button class="btn-sub" id="download-cv-btn">
+                    <span class="btn-text">Download CV</span>
+                    <div class="download-progress"></div>
+                </button>
+            </div>
+            
+            <div class="scroll-indicator" id="scroll-trigger">
+                <div class="mouse-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+                    </svg>
+                </div>
+                <span class="scroll-text">SCROLL DOWN</span>
+            </div>
         </div>
-        <span class="scroll-text">SCROLL DOWN</span>
-    </div>
-</div>
     </main>
 
-    <div class="bg-container">
-    <div class="bg-mesh"></div>
-    <div class="bg-image-overlay"></div>
-</div>
+    <section id="projects" class="projects-section">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Showcase of robust and scalable applications built with MERN and Python.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="card-image"><div class="img-placeholder"></div></div>
+                <div class="card-content">
+                    <h3>BrewVerse Elite</h3>
+                    <p>Real-time restaurant management system with multi-terminal support.</p>
+                    <div class="tags"><span>Node.js</span><span>Socket.io</span><span>React</span></div>
+                    <div class="card-btns">
+                        <button class="btn-code">Code</button>
+                        <button class="btn-live">Live Demo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-image"><div class="img-placeholder"></div></div>
+                <div class="card-content">
+                    <h3>AI Desktop Assistant</h3>
+                    <p>Python multi-threaded application featuring screen analysis and Gemini API.</p>
+                    <div class="tags"><span>Python</span><span>OpenCV</span><span>AI</span></div>
+                    <div class="card-btns">
+                        <button class="btn-code">Code</button>
+                        <button class="btn-live">Live Demo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-image"><div class="img-placeholder"></div></div>
+                <div class="card-content">
+                    <h3>LifeBank</h3>
+                    <p>Blood bank management system developed to track donor records efficiently.</p>
+                    <div class="tags"><span>PHP</span><span>MySQL</span><span>JS</span></div>
+                    <div class="card-btns">
+                        <button class="btn-code">Code</button>
+                        <button class="btn-live">Live Demo</button>
+                    </div>
+                </div>
+
+
+                
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
