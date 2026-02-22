@@ -195,3 +195,372 @@ html {
     box-shadow: 0 0 20px rgba(16, 185, 129, 0.4) !important;
     border-color: #10b981 !important;
 }
+
+:root {
+    --bg-dark: #0b0108;
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff0055; /* Match your buttons and borders */
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+.about-section {
+    padding: 120px 10%;
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 85, 0.05) 0%, transparent 70%); /* Background glow from image 3 */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Biography Styling */
+.bio-card {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    backdrop-filter: blur(10px);
+}
+
+.highlight-cyan { color: var(--neon-cyan); font-weight: 600; }
+
+/* Achievement Tiles Styling */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Spanning the third tile for layout balance */
+.stat-tile:nth-child(3) { grid-column: span 2; }
+
+.stat-tile {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.stat-tile:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-cyan);
+}
+
+.tile-border-bottom {
+    position: absolute;
+    bottom: 0; left: 10%; width: 80%; height: 3px;
+    background: var(--neon-pink); /* Burgundy/Pink border from image 5 */
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    margin: 10px 0;
+}
+
+.tile-icon { font-size: 1.5rem; margin-bottom: 10px; }
+
+/* Card Base Styling */
+.project-card {
+    position: absolute;
+    width: 180px;
+    height: 320px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1.5px solid rgba(0, 243, 255, 0.15);
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Fix for Top Image Box */
+.card-img-container {
+    width: 100%;
+    height: 190px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Content Area */
+.card-info h3 { color: #fff; font-family: 'Orbitron', sans-serif; margin-bottom: 10px; }
+.card-info p { color: #cbd5e1; font-size: 0.85rem; line-height: 1.6; margin-bottom: 25px; }
+
+/* --- Button Animations --- */
+.card-btns {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+/* Solid Cyan Button */
+.btn-demo {
+    background: #00f3ff;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    flex: 1;
+    text-align: center;
+}
+
+.btn-demo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 243, 255, 0.6);
+}
+
+/* Glow Border Button */
+.btn-code {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid #ff0055; /* Burgundy Glow Border */
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-code:hover {
+    background: rgba(255, 0, 85, 0.1);
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Nav Controls */
+.carousel-controls {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.arrow-btn {
+    background: transparent;
+    border: 2px solid #00f3ff;
+    color: #00f3ff;
+    width: 65px;
+    height: 45px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.projects-stack-section {
+    padding: 100px 10%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.stack-viewport {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stack-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.stack-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: bottom center;
+    cursor: pointer;
+}
+
+/* Depth Stacking Logic */
+.stack-card:nth-child(1) { z-index: 3; transform: translateY(0) scale(1); opacity: 1; }
+.stack-card:nth-child(2) { z-index: 2; transform: translateY(-20px) scale(0.95); opacity: 0.6; }
+.stack-card:nth-child(3) { z-index: 1; transform: translateY(-40px) scale(0.9); opacity: 0.3; }
+
+.card-glass-content {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 30px;
+    height: 100%;
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    backdrop-filter: blur(20px);
+}
+
+.card-image-box {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+}
+
+.card-image-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.card-details { flex: 1.2; display: flex; flex-direction: column; justify-content: center; }
+
+/* Buttons */
+.stack-btns { display: flex; gap: 15px; margin-top: 30px; }
+.btn-solid { background: #00f3ff; color: #000; padding: 12px 25px; border-radius: 12px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+.btn-outline { border: 2px solid #ff0055; color: #fff; padding: 12px 25px; border-radius: 12px; text-decoration: none; transition: 0.3s; }
+
+.btn-solid:hover { box-shadow: 0 0 20px rgba(0, 243, 255, 0.5); transform: translateY(-3px); }
+.btn-outline:hover { background: rgba(255, 0, 85, 0.1); transform: translateY(-3px); }
+
+/* Navigation Controls */
+.stack-controls {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-pill {
+    background: transparent;
+    border: 2px solid #00f3ff;
+    color: #00f3ff;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+}
+
+.nav-pill:hover { background: #00f3ff; color: #000; box-shadow: 0 0 15px #00f3ff; }
+
+.clock-viewport {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 2000px;
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clock-card {
+    position: absolute;
+    width: 320px;
+    height: 450px;
+    left: 50%;
+    top: 50%;
+    margin-left: -160px;
+    margin-top: -225px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(0, 243, 255, 0.1);
+    border-radius: 25px;
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    transition: all 0.8s ease;
+    opacity: 0.3;
+    filter: blur(2px) grayscale(80%);
+}
+
+.clock-card.active {
+    opacity: 1;
+    filter: none;
+    border-color: #00f3ff;
+    box-shadow: 0 0 40px rgba(0, 243, 255, 0.2);
+}
+
+/* Reusing your established button styles */
+.carousel-controls {
+   position: absolute;
+    bottom: 40px;      /* Distance from the bottom of the section */
+    left: 8%;          /* Aligns with your container's left padding */
+    display: flex;
+    gap: 15px;         /* Space between the two buttons */
+    z-index: 100;      /* Keeps them above 3D elements */
+    transform: none;
+}
+
+.arrow-btn {
+    background: transparent;
+    border: 2px solid #00f3ff;
+    color: #00f3ff;
+    width: 65px;
+    height: 45px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+/* 1. Ensure the Nav Bar has the highest priority */
+.glass-nav {
+position: fixed;
+    top: 0;
+    width: 100%;
+    /* Ensure navbar is ALWAYS on top of 3D cards */
+    z-index: 1000; 
+    background: rgba(11, 1, 8, 0.8);
+    backdrop-filter: blur(15px);
+}
+
+/* 2. Add Top Padding to the Projects Section */
+.clock-section {
+    /* Push the section down so it starts after the navbar */
+    padding-top: 10px; 
+    padding-bottom: 80px;
+    position: relative;
+    /* Lower z-index than navbar to prevent 3D "poke-through" */
+    z-index: 1;
+}
+
+/* 3. Adjust the Carousel Viewport for proper vertical centering */
+.clock-viewport {
+  height: 500px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Extra margin to separate from the section title */
+    margin-top: 30px;
+}
+
+/* 4. Ensure the Section Heading doesn't collide with the Nav */
+.section-num {
+   /* Ensure the title has breathing room */
+    margin-bottom: 20px;
+} 
+

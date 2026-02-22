@@ -165,3 +165,80 @@ downloadBtn.addEventListener('click', () => {
 
     }, 2000); 
 });
+
+// Function to animate the achievement numbers
+const animateNumbers = () => {
+    const numbers = document.querySelectorAll('.stat-number');
+    numbers.forEach(num => {
+        const target = +num.getAttribute('data-target');
+        const count = +num.innerText;
+        const increment = target / 100;
+
+        if (count < target) {
+            num.innerText = Math.ceil(count + increment);
+            setTimeout(animateNumbers, 20);
+        } else {
+            num.innerText = target + "+";
+        }
+    });
+};
+
+// Intersection Observer to trigger entrance and numbers
+const revealOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+            if(entry.target.classList.contains('stats-grid')) {
+                animateNumbers();
+            }
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.reveal, .stats-grid').forEach(el => revealOnScroll.observe(el));
+
+const clockFace = document.getElementById('clockFace');
+const cards = document.querySelectorAll('.clock-card');
+const nextBtn = document.getElementById('nextTick');
+const prevBtn = document.getElementById('prevTick');
+
+let currentRotation = 0;
+let currentIndex = 0;
+const angleStep = 360 / cards.length;
+
+function updateClock(direction) {
+    if (direction === 'next') {
+        currentRotation -= angleStep;
+        currentIndex = (currentIndex + 1) % cards.length;
+    } else {
+        currentRotation += angleStep;
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    }
+
+    // Rotate the entire container
+    clockFace.style.transform = `rotateY(${currentRotation}deg)`;
+
+    // Update active state and pointer events
+    cards.forEach((card, i) => {
+        if (i === currentIndex) {
+            card.classList.add('active');
+            card.style.pointerEvents = "auto";
+        } else {
+            card.classList.remove('active');
+            card.style.pointerEvents = "none";
+        }
+    });
+}
+
+// Initial positioning of cards in a 3D circle
+cards.forEach((card, i) => {
+    const angle = i * angleStep;
+    // We push the cards out 450px from the center
+    card.style.transform = `rotateY(${angle}deg) translateZ(450px)`;
+});
+
+nextBtn.addEventListener('click', () => updateClock('next'));
+prevBtn.addEventListener('click', () => updateClock('prev'));
+
+// Set first card active
+cards[0].classList.add('active');
