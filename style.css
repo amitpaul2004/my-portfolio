@@ -506,13 +506,12 @@ html {
 
 /* Reusing your established button styles */
 .carousel-controls {
-   position: absolute;
-    bottom: 40px;      /* Distance from the bottom of the section */
-    left: 8%;          /* Aligns with your container's left padding */
+position: absolute;
+    bottom: 30px;
+    left: 5%;
     display: flex;
-    gap: 15px;         /* Space between the two buttons */
-    z-index: 100;      /* Keeps them above 3D elements */
-    transform: none;
+    gap: 15px;
+    z-index: 100;
 }
 
 .arrow-btn {
@@ -530,37 +529,112 @@ html {
 .glass-nav {
 position: fixed;
     top: 0;
-    width: 100%;
-    /* Ensure navbar is ALWAYS on top of 3D cards */
-    z-index: 1000; 
-    background: rgba(11, 1, 8, 0.8);
-    backdrop-filter: blur(15px);
+    height: 80px; /* Ensure this matches your actual nav height */
+    z-index: 9999;
 }
-
 /* 2. Add Top Padding to the Projects Section */
 .clock-section {
-    /* Push the section down so it starts after the navbar */
-    padding-top: 10px; 
-    padding-bottom: 80px;
-    position: relative;
-    /* Lower z-index than navbar to prevent 3D "poke-through" */
-    z-index: 1;
+position: relative;
+    /* Reduced from 180px to 100px to pull the section up */
+    padding-top: 100px;    
+    padding-bottom: 120px;
+    z-index: 10;
+    background: #0b0108;   
 }
 
+.clock-section .section-num {
+    margin-top: 0;
+    margin-bottom: 20px; /* Reduced space below title */
+    display: block;
+}
 /* 3. Adjust the Carousel Viewport for proper vertical centering */
 .clock-viewport {
-  height: 500px; 
+height: 480px; 
+    /* Set margin-top to 0 or a small value to bring slides higher */
+    margin-top: 10px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Extra margin to separate from the section title */
-    margin-top: 30px;
+    position: relative;
 }
-
 /* 4. Ensure the Section Heading doesn't collide with the Nav */
 .section-num {
    /* Ensure the title has breathing room */
     margin-bottom: 20px;
 } 
+
+
+
+/* service */
+.services-hex-section {
+    padding: 120px 0;
+    background: #0b0108;
+    position: relative;
+    z-index: 1; /* Keep behind your 3D Project Cycle */
+}
+
+.hex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.hex-item {
+    width: 280px;
+    height: 320px;
+    position: relative;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.hex-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.hex-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.hex-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+}
+
+.hex-icon { font-size: 2.5rem; margin-bottom: 10px; }
+.hex-content h3 { font-family: 'Orbitron', sans-serif; color: #fff; font-size: 1.2rem; }
+.hex-content p { font-size: 0.8rem; color: #94a3b8; margin: 10px 0; }
+
+.hex-hover-text {
+    font-size: 0.7rem;
+    color: #00f3ff;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+.hex-item:hover .hex-hover-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 

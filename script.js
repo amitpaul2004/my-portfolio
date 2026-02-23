@@ -242,3 +242,18 @@ prevBtn.addEventListener('click', () => updateClock('prev'));
 
 // Set first card active
 cards[0].classList.add('active');
+
+// service
+const hexSection = document.querySelector('.services-hex-section');
+const projectSection = document.querySelector('.clock-section');
+
+window.addEventListener('scroll', () => {
+    const projectRect = projectSection.getBoundingClientRect();
+    
+    // If project section is out of view, give services section higher priority
+    if (projectRect.bottom < 0) {
+        hexSection.style.zIndex = "10";
+    } else {
+        hexSection.style.zIndex = "1";
+    }
+});
