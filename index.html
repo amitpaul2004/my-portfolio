@@ -1,202 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amit Paul | AI & MERN Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amit Paul | AI Developer</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <canvas id="particleCanvas"></canvas>
 
-    <nav class="glass-nav dropdown">
-        <div class="nav-container">
-            <div class="logo">AMIT<span>PAUL</span></div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="mailto:amitp.cse.23.jisu@gmail.com" class="hire-btn">Let's Talk</a>
-            </div>
-        </div>
-    </nav>
+<canvas id="particles"></canvas>
+<div class="mouse-glow"></div>
 
-    <main id="home" class="hero">
-        <div class="hero-text">
-            <span class="badge reveal delay-1">Available for Freelance</span>
-            <h1 class="slide-left delay-2">Hi, I'm <span class="neon-text">Amit Paul</span></h1>
-            <h2 class="reveal delay-2">Full-Stack AI Developer</h2>
-            <p class="reveal delay-3">Creating beautiful, functional, and user-centered digital experiences.</p>
-            
-            <div class="cta-group reveal delay-3">
-                <button class="interactive-btn btn-primary" id="viewWork">View My Work</button>
-                <button class="interactive-btn btn-secondary" id="downloadCV">
-    <span class="btn-text">Download CV</span>
-    <div class="loader-circle" id="cvLoader"></div>
-</button>
+<header class="header">
 
-<a id="hiddenDownload" href="amit.pdf" download="Amit_Paul_CV.pdf" style="display:none;"></a>
-            </div>
-        </div>
+<div class="logo">Krishna</div>
 
-        <div class="hero-visual slide-right delay-2">
-            <div class="glow-card" id="profileCard">
-                <img src="img/qrcode_306132527_931a1b5ac7b6973acef99a819891a650 (1).png" alt="Amit Paul" class="profile-img">
-                <div class="ai-core"></div>
-            </div>
-        </div>
-    </main>
+<nav class="nav">
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+<a href="#">Skills</a>
+<a href="#">Testimonials</a>
+<a href="#">Contact</a>
+</nav>
 
-    <section id="about" class="about-section">
-    <div class="container">
-        <div class="about-header reveal">
-            <!-- <h2 class="section-num">01.</h2> -->
-            <h2 class="section-title neon-cyan-text">About Me</h2>
-        </div>
-        
-        <div class="about-grid">
-            <div class="bio-container reveal delay-1">
-                <div class="glass-card bio-card">
-                    <p>
-                        Hello! I'm <span class="highlight-cyan">Amit Paul</span>, a developer based in Ichapur with a passion for building intelligent digital systems. 
-                        Currently, I am pursuing my <span class="highlight-cyan">B.Tech at JIS University</span>.
-                    </p>
-                    <p>
-                        My journey in tech began at <span class="highlight-cyan">Kendriya Vidyalaya No. 2 Ichapur</span>, and today I specialize in the 
-                        <span class="highlight-cyan">MERN Stack</span> and <span class="highlight-cyan">Generative AI</span>. I thrive on solving complex problems; 
-                        whether it's managing river systems with <span class="highlight-cyan">Nadi Mitra</span> or designing real-time restaurant platforms like <span class="highlight-cyan">BrewVerse Elite</span>.
-                    </p>
-                </div>
-            </div>
+<div class="nav-buttons">
+<button class="upwork">Upwork</button>
+<button class="fiverr">Fiverr</button>
+</div>
 
-            <div class="stats-grid">
-                <div class="stat-tile reveal delay-2" data-tilt>
-                    <div class="tile-glow"></div>
-                    <div class="tile-icon">📜</div>
-                    <span class="stat-number" data-target="2025">0</span>
-                    <p>Oracle Cloud AI Certified</p>
-                    <div class="tile-border-bottom"></div>
-                </div>
+</header>
 
-                <div class="stat-tile reveal delay-3" data-tilt>
-                    <div class="tile-glow"></div>
-                    <div class="tile-icon">🚀</div>
-                    <span class="stat-number" data-target="10">0</span>
-                    <p>Projects Completed</p>
-                    <div class="tile-border-bottom"></div>
-                </div>
 
-                <div class="stat-tile reveal delay-4" data-tilt>
-                    <div class="tile-glow"></div>
-                    <div class="tile-icon">🛡️</div>
-                    <span class="stat-number" data-target="4">0</span>
-                    <p>Core Certifications</p>
-                    <div class="tile-border-bottom"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="hero">
+
+<div class="badge">✨ Available for Hire</div>
+
+<h1>
+<span class="gradient">AI Developer</span><br>
+& Automation Expert
+</h1>
+
+<p>
+I build ChatGPT bots, automation tools, and AI solutions that save time and money for businesses
+</p>
+
+<div class="buttons">
+
+<button class="btn primary">Hire Me on Upwork →</button>
+<button class="btn green">Hire Me on Fiverr →</button>
+<button class="btn dark">View My Work</button>
+
+</div>
+
+
+<div class="stats">
+
+<div>
+<h2>50+</h2>
+<p>Projects Completed</p>
+</div>
+
+<div>
+<h2>30+</h2>
+<p>Happy Clients</p>
+</div>
+
+<div>
+<h2>5+</h2>
+<p>Years Experience</p>
+</div>
+
+<div>
+<h2>100%</h2>
+<p>Success Rate</p>
+</div>
+
+</div>
+
 </section>
 
+<script src="script.js"></script>
 
-
-<section id="projects" class="clock-section reveal">
-    <div class="container">
-        <b><h2 class="section-num">  <span class="neon-text">Project Cycle</span></h2></b>
-        
-        <div class="clock-viewport">
-            <div class="clock-face" id="clockFace">
-                <div class="clock-card" data-index="0">
-                    <div class="card-img-container">
-                        <img src="img/qrcode_306132527_931a1b5ac7b6973acef99a819891a650 (1).png" alt="BrewVerse Elite" class="project-image">
-                    </div>
-                    <div class="card-info">
-                        <h3>BrewVerse Elite</h3>
-                        <p>MERN Stack Restaurant Platform</p>
-                        <div class="card-btns">
-                            <a href="https://www.fyg.com" class="btn-demo">Live Demo</a>
-                            <a href="#" class="btn-code">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clock-card" data-index="1">
-                    <div class="card-img-container">
-                        <img src="img/qrcode_306132527_931a1b5ac7b6973acef99a819891a650 (1).png" alt="Project Nadi Mitra" class="project-image">
-                    </div>
-                    <div class="card-info">
-                        <h3>Project Nadi Mitra</h3>
-                        <p>IoT-based River Management</p>
-                        <div class="card-btns">
-                            <a href="https://www.fyg.com" class="btn-demo">Live Demo</a>
-                            <a href="https://www.fyg.com" class="btn-code">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clock-card" data-index="2">
-                    <div class="card-img-container">
-                        <img src="img/qrcode_306132527_931a1b5ac7b6973acef99a819891a650 (1).png" alt="AI Assistant" class="project-image">
-                    </div>
-                    <div class="card-info">
-                        <h3>AI Assistant</h3>
-                        <p>Gemini-powered Companion</p>
-                        <div class="card-btns">
-                            <a href="https://www.fyg.com" class="btn-demo">Live Demo</a>
-                            <a href="#" class="btn-code">View Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-controls">
-                <button class="arrow-btn" id="prevTick">←</button>
-                <button class="arrow-btn" id="nextTick">→</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="services-hex-section reveal">
-    <div class="container">
-        <b><h2 class="section-num"><span class="neon-text">Technical Expertise</span></h2></b>
-        
-        <div class="hex-grid">
-            <div class="hex-item">
-                <div class="hex-content">
-                    <div class="hex-icon">🌐</div>
-                    <h3>Full Stack</h3>
-                    <p>MERN Stack specialist focusing on real-time UI/UX.</p>
-                    <div class="hex-hover-text">MongoDB | React | Node</div>
-                </div>
-            </div>
-
-            <div class="hex-item">
-                <div class="hex-content">
-                    <div class="hex-icon">🤖</div>
-                    <h3>GenAI</h3>
-                    <p>Oracle Certified Professional in Generative AI.</p>
-                    <div class="hex-hover-text">Gemini API | Python | OCI</div>
-                </div>
-            </div>
-
-            <div class="hex-item">
-                <div class="hex-content">
-                    <div class="hex-icon">💻</div>
-                    <h3>Core Eng.</h3>
-                    <p>OOP & Algorithm solutions from JIS University.</p>
-                    <div class="hex-hover-text">Java | C++ | Data Structures</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <script src="script.js"></script>
 </body>
 </html>
