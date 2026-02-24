@@ -318,3 +318,10 @@ transition:0.3s;
 .download-btn:hover .icon{
 transform:translateY(3px);
 }
+.stat{
+transition:0.4s;
+}
+
+.stat:hover{
+transform:translateY(-6px) scale(1.05);
+}
