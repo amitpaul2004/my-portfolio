@@ -136,3 +136,15 @@ behavior: 'smooth'
 });
 
 });
+
+const btn = document.querySelector(".download-btn")
+
+btn.addEventListener("click",()=>{
+
+btn.innerHTML="Downloading..."
+
+setTimeout(()=>{
+btn.innerHTML="✔ Downloaded"
+},1200)
+
+})
