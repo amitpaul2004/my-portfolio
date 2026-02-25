@@ -583,3 +583,53 @@ entry.target.classList.add("active");
 if(skillsTitle){
 skillsTitleObserver.observe(skillsTitle);
 }
+
+// ==================
+// Testimonials
+// ==================
+const testimonialCards = document.querySelectorAll(".testimonial-card");
+
+const testimonialObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+testimonialCards.forEach((card,i)=>{
+
+setTimeout(()=>{
+card.classList.add("show");
+}, i * 200);
+
+});
+
+}
+
+});
+
+},{threshold:0.3});
+
+const testimonialSection = document.querySelector(".testimonials");
+
+if(testimonialSection){
+testimonialObserver.observe(testimonialSection);
+}
+
+
+const testimonialsTitle = document.querySelector(".testimonials-title");
+
+const testimonialsObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+},{threshold:0.6});
+
+if(testimonialsTitle){
+testimonialsObserver.observe(testimonialsTitle);
+}
