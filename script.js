@@ -633,3 +633,43 @@ entry.target.classList.add("active");
 if(testimonialsTitle){
 testimonialsObserver.observe(testimonialsTitle);
 }
+
+
+
+// =====
+// contact
+// =====
+const contactBox = document.querySelector(".contact-container");
+
+const contactObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{threshold:0.4});
+
+if(contactBox){
+contactObserver.observe(contactBox);
+}
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+},{threshold:0.3});
+
+revealElements.forEach(el=>{
+revealObserver.observe(el);
+});
