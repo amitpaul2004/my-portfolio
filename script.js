@@ -183,4 +183,212 @@ counter.innerText = target + "+"
 updateCount()
 
 })
+    document.querySelector(".scroll-indicator").onclick = () => {
+
+window.scrollBy({
+top: window.innerHeight,
+behavior: "smooth"
+})
+
+
+
+
+// about
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll", () => {
+
+let current = "";
+
+sections.forEach(section => {
+
+const sectionTop = section.offsetTop - 200;
+
+if (scrollY >= sectionTop) {
+current = section.getAttribute("id");
+}
+
+});
+
+navLinks.forEach(link => {
+
+link.classList.remove("active");
+
+if (link.getAttribute("href") === "#" + current) {
+link.classList.add("active");
+}
+
+});
+
+});
+const reveals = document.querySelectorAll(".reveal")
+
+function revealOnScroll(){
+
+reveals.forEach(el=>{
+
+const top = el.getBoundingClientRect().top
+const windowHeight = window.innerHeight
+
+if(top < windowHeight - 80){
+el.classList.add("active")
+}
+
+})
+
+}
+
+window.addEventListener("scroll", revealOnScroll)
+revealOnScroll()
+
+document.querySelectorAll(".tilt").forEach(card=>{
+
+card.addEventListener("mousemove", e=>{
+
+const rect = card.getBoundingClientRect()
+
+const x = e.clientX - rect.left
+const y = e.clientY - rect.top
+
+const centerX = rect.width/2
+const centerY = rect.height/2
+
+const rotateX = -(y - centerY)/10
+const rotateY = (x - centerX)/10
+
+card.style.transform =
+`rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`
+
+})
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="rotateX(0) rotateY(0)"
+
+})
+
+})
+
+const about = document.querySelector(".about")
+
+about.addEventListener("mousemove", e=>{
+
+const x = e.clientX / window.innerWidth
+const y = e.clientY / window.innerHeight
+
+about.style.backgroundPosition =
+`${x*40}px ${y*40}px`
+
+})
+
+
+document.querySelectorAll('.nav a').forEach(link => {
+
+link.addEventListener('click', function(e) {
+
+e.preventDefault();
+
+const target = document.querySelector(this.getAttribute('href'));
+
+target.scrollIntoView({
+behavior: "smooth"
+});
+
+});
+
+});
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0)";
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity = "0";
+card.style.transform = "translateY(60px)";
+observer.observe(card);
+});
+
+
+
+
+
+    }
+
+// ABOUT TEXT ANIMATION
+
+const elements = document.querySelectorAll(".slide-up");
+const title = document.querySelector(".section-title");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}
+
+});
+
+},{threshold:0.4});
+
+elements.forEach(el => observer.observe(el));
+
+
+// title underline animation
+
+const titleObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+},{threshold:0.6});
+
+titleObserver.observe(title);
+
+const cards = document.querySelectorAll(".about-card");
+
+const cardObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+cards.forEach((card,index)=>{
+
+setTimeout(()=>{
+card.classList.add("show");
+}, index * 200);
+
+});
+
+}
+
+});
+
+},{threshold:0.4});
+
+cardObserver.observe(document.querySelector(".about-cards"));
+ 
+
+
+
 
