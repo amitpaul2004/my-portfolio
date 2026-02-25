@@ -1084,33 +1084,39 @@ download button
 .work-btn{
 display:inline-flex;
 align-items:center;
-justify-content:center;
 gap:10px;
 
 padding:14px 28px;
-
 border-radius:14px;
 
-background:rgba(15,23,42,.9);
+background:#0f172a;
 border:1px solid rgba(255,255,255,.08);
 
 color:white;
 font-weight:600;
-font-size:16px;
-
 cursor:pointer;
-text-decoration:none;
 
 transition:.3s;
 }
 
-/* icon */
-
-.work-btn i{
+.download-icon{
 font-size:18px;
-display:flex;
-align-items:center;
+transition:.4s;
 }
+
+/* animation */
+
+.work-btn.loading .download-icon{
+animation:downloadSpin 1s ease infinite;
+}
+
+@keyframes downloadSpin{
+
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+
+}
+
 .work-btn:hover{
 transform:translateY(-3px);
 box-shadow:0 10px 30px rgba(0,0,0,.4);

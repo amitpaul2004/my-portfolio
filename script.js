@@ -137,17 +137,7 @@ behavior: 'smooth'
 
 });
 
-const btn = document.querySelector(".download-btn")
 
-btn.addEventListener("click",()=>{
-
-btn.innerHTML="Downloading..."
-
-setTimeout(()=>{
-btn.innerHTML="✔ Downloaded"
-},1200)
-
-})
 
 const counters = document.querySelectorAll(".counter")
 
@@ -516,3 +506,30 @@ entry.target.classList.add("active");
 if(portfolioTitle){
 portfolioObserver.observe(portfolioTitle);
 }
+
+
+// =====
+// download button animation
+// ====
+
+const btn = document.getElementById("downloadBtn");
+
+btn.addEventListener("click", () => {
+
+btn.classList.add("loading");
+
+btn.querySelector(".btn-text").innerText = "Preparing Download...";
+
+setTimeout(() => {
+
+const link = document.createElement("a");
+link.href = "amit.pdf";
+link.download = "amit.pdf";
+link.click();
+
+btn.classList.remove("loading");
+btn.querySelector(".btn-text").innerText = "View My Work";
+
+}, 1500);
+
+});
