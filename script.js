@@ -533,3 +533,53 @@ btn.querySelector(".btn-text").innerText = "View My Work";
 }, 1500);
 
 });
+
+
+// =================
+// skills target
+// =================
+
+const skillCards = document.querySelectorAll(".skill-card");
+
+const skillsObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+skillCards.forEach((card,i)=>{
+
+setTimeout(()=>{
+card.classList.add("show");
+}, i * 150);
+
+});
+
+}
+
+});
+
+},{threshold:0.3});
+
+const skillsGrid = document.querySelector(".skills-grid");
+
+if(skillsGrid){
+skillsObserver.observe(skillsGrid);
+}
+const skillsTitle = document.querySelector(".skills-title");
+
+const skillsTitleObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+},{threshold:0.6});
+
+if(skillsTitle){
+skillsTitleObserver.observe(skillsTitle);
+}
