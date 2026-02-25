@@ -326,29 +326,32 @@ observer.observe(card);
 
     }
 
+// ===============================
 // ABOUT TEXT ANIMATION
+// ===============================
 
 const elements = document.querySelectorAll(".slide-up");
-const title = document.querySelector(".section-title");
 
-const observer = new IntersectionObserver(entries => {
+const textObserver = new IntersectionObserver(entries => {
 
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
-
 entry.target.classList.add("active");
-
 }
 
 });
 
 },{threshold:0.4});
 
-elements.forEach(el => observer.observe(el));
+elements.forEach(el => textObserver.observe(el));
 
 
-// title underline animation
+// ===============================
+// TITLE UNDERLINE ANIMATION
+// ===============================
+
+const title = document.querySelector(".section-title");
 
 const titleObserver = new IntersectionObserver(entries => {
 
@@ -362,7 +365,14 @@ entry.target.classList.add("active");
 
 },{threshold:0.6});
 
+if(title){
 titleObserver.observe(title);
+}
+
+
+// ===============================
+// ABOUT CARDS ANIMATION
+// ===============================
 
 const cards = document.querySelectorAll(".about-card");
 
@@ -386,9 +396,76 @@ card.classList.add("show");
 
 },{threshold:0.4});
 
-cardObserver.observe(document.querySelector(".about-cards"));
- 
+const aboutCardsContainer = document.querySelector(".about-cards");
+
+if(aboutCardsContainer){
+cardObserver.observe(aboutCardsContainer);
+}
 
 
+// ===============================
+// SERVICES CARDS ANIMATION
+// ===============================
 
+const serviceCards = document.querySelectorAll(".service-card");
 
+const serviceObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+serviceCards.forEach((card,index)=>{
+
+setTimeout(()=>{
+card.classList.add("show");
+}, index * 150);
+
+});
+
+}
+
+});
+
+},{threshold:0.2});
+
+const servicesGrid = document.querySelector(".services-grid");
+
+if(servicesGrid){
+serviceObserver.observe(servicesGrid);
+}
+const subtitle = document.querySelector(".reveal-text");
+
+const subtitleObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+},{threshold:0.5});
+
+if(subtitle){
+subtitleObserver.observe(subtitle);
+}
+
+const servicesTitle = document.querySelector(".services-title");
+
+const servicesObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+},{threshold:0.6});
+
+if(servicesTitle){
+servicesObserver.observe(servicesTitle);
+}
