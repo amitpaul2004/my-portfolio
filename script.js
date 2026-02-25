@@ -469,3 +469,50 @@ entry.target.classList.add("active");
 if(servicesTitle){
 servicesObserver.observe(servicesTitle);
 }
+
+
+// ================================
+// PORTFOLIO CARDS ANIMATION
+// ===============================
+
+const projects = document.querySelectorAll(".project-card");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+projects.forEach((card,index)=>{
+
+setTimeout(()=>{
+card.classList.add("show");
+}, index * 180);
+
+});
+
+}
+
+});
+
+},{threshold:0.2});
+
+observer.observe(document.querySelector(".projects-grid"));
+
+const portfolioTitle = document.querySelector(".portfolio-title");
+
+const portfolioObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+},{threshold:0.6});
+
+if(portfolioTitle){
+portfolioObserver.observe(portfolioTitle);
+}
