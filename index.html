@@ -13,6 +13,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -606,35 +607,36 @@ Get Started on Fiverr →
 
     <h2>Contact Me</h2>
 
-    <form id="contactForm">
+<form id="contactForm">
 
-      <div class="input-group">
-<input type="text" required placeholder=" ">
+<div class="input-group">
+<input type="text" name="name" required placeholder=" ">
 <label>Name</label>
 </div>
 
 <div class="input-group">
-<input type="email" required placeholder=" ">
+<input type="email" name="email" required placeholder=" ">
 <label>Email</label>
 </div>
 
 <div class="input-group">
-<textarea required placeholder=" "></textarea>
+<textarea name="message" required placeholder=" "></textarea>
 <label>Message</label>
 </div>
 
-      <button type="submit" class="send-btn" id="sendBtn">
-        <i class="bi bi-send"></i>
-        Send Message
-      </button>
+<button type="submit" class="send-btn" id="sendBtn">
+Send Message
+</button>
 
-    </form>
+</form>
 
   </div>
 
 </div>
 </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="script.js"></script>
 
 </body>

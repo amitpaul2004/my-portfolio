@@ -703,3 +703,33 @@ sendBtn.classList.add("success");
 sendBtn.innerHTML = '<i class="bi bi-check"></i> Message Sent';
 
 });
+
+
+/* EMAILJS */
+
+(function(){
+emailjs.init("GZFRle1CvikMGd85P");
+})();
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+"service_rkjjoum",
+"template_0s74vb5",
+this
+).then(function(){
+
+document.getElementById("sendBtn").innerHTML =
+"✔ Message Sent";
+
+}, function(error){
+
+alert("Failed to send message");
+
+});
+
+});
