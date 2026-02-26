@@ -1623,11 +1623,17 @@ flex-wrap:wrap;
 
 .contact-btn{
 
-padding:14px 26px;
+display:inline-flex;
+align-items:center;
+gap:10px;
 
-border-radius:10px;
+padding:12px 20px;
 
+color:#f6f5f8;
 font-weight:600;
+
+border:1px solid #7d7c7e;
+border-radius:8px;
 
 text-decoration:none;
 
@@ -1865,6 +1871,238 @@ animation:gradientMove 6s linear infinite;
 
 }   
 .contact-btn:hover{
-transform:translateY(-5px) scale(1.03);
-box-shadow:0 15px 40px rgba(0,0,0,.5);
+
+background:#a855f7;
+color:white;
+
+box-shadow:
+0 0 10px #a855f7,
+0 0 25px #a855f7;
+}
+/* MODAL */
+
+.contact-modal{
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:flex-start;   /* move upward */
+
+padding-top:20px;        /* space from top */
+
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(8px);
+
+opacity:0;
+pointer-events:none;
+transition:.35s;
+
+z-index:999;
+}
+
+.contact-modal.active{
+opacity:1;
+pointer-events:auto;
+}
+
+/* POPUP BOX */
+
+.contact-box{
+
+width:90%;
+max-width:420px;
+
+background:#0f172a;
+
+padding:30px;
+border-radius:18px;
+
+box-shadow:0 30px 80px rgba(0,0,0,.6);
+
+position:relative;
+
+/* animation */
+transform:translateY(-40px) scale(.9);
+opacity:0;
+transition:.45s;
+}
+
+.contact-modal.active .contact-box{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+.input-group{
+position:relative;
+margin-bottom:18px;
+}
+
+.input-group input,
+.input-group textarea{
+
+width:100%;
+padding:14px;
+
+border-radius:10px;
+border:1px solid rgba(255,255,255,.08);
+
+background:#020617;
+color:white;
+
+outline:none;
+}
+
+.input-group label{
+
+position:absolute;
+left:14px;
+top:50%;
+transform:translateY(-50%);
+
+color:#94a3b8;
+font-size:14px;
+
+transition:.3s;
+pointer-events:none;
+}
+
+/* floating */
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label{
+
+top:-8px;
+font-size:12px;
+
+background:#020617;
+padding:0 6px;
+
+color:#6366f1;
+}
+.send-btn{
+
+margin-top:10px;
+
+width:100%;
+padding:13px;
+
+border:none;
+border-radius:12px;
+
+background:linear-gradient(90deg,#6366f1,#8b5cf6);
+
+color:white;
+font-weight:600;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.send-btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 10px 30px rgba(99,102,241,.7);
+}
+.close-btn{
+position:absolute;
+top:15px;
+right:15px;
+
+border:none;
+background:none;
+
+color:white;
+font-size:20px;
+
+cursor:pointer;
+
+transition:.4s;
+}
+
+.close-btn:hover{
+transform:rotate(180deg) scale(1.2);
+}
+@keyframes popupSlide{
+
+from{
+transform:translateY(-80px);
+opacity:0;
+}
+
+to{
+transform:translateY(0);
+opacity:1;
+}
+
+}
+
+.contact-modal.active .contact-box{
+animation:popupSlide .45s ease;
+}
+.contact-box{
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+}
+.input-group{
+position:relative;
+margin-bottom:18px;
+}
+
+.input-group input,
+.input-group textarea{
+
+width:100%;
+padding:14px;
+
+border-radius:10px;
+border:1px solid rgba(255,255,255,.08);
+
+background:#020617;
+color:white;
+
+outline:none;
+}
+
+/* LABEL */
+
+.input-group label{
+
+position:absolute;
+left:14px;
+top:50%;
+
+transform:translateY(-50%);
+
+color:#94a3b8;
+font-size:14px;
+
+transition:.25s;
+pointer-events:none;
+}
+
+/* FLOAT EFFECT */
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label{
+
+top:-8px;
+font-size:12px;
+
+background:#020617;
+padding:0 6px;
+
+color:#6366f1;
 }

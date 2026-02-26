@@ -673,3 +673,33 @@ entry.target.classList.add("active");
 revealElements.forEach(el=>{
 revealObserver.observe(el);
 });
+
+const modal = document.getElementById("contactModal");
+const openBtn = document.getElementById("openContact");
+const closeBtn = document.getElementById("closeContact");
+const form = document.getElementById("contactForm");
+const sendBtn = document.getElementById("sendBtn");
+
+/* open */
+
+openBtn.onclick = (e)=>{
+e.preventDefault();
+modal.classList.add("active");
+};
+
+/* close */
+
+closeBtn.onclick = ()=>{
+modal.classList.remove("active");
+};
+
+/* send animation */
+
+form.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+sendBtn.classList.add("success");
+sendBtn.innerHTML = '<i class="bi bi-check"></i> Message Sent';
+
+});

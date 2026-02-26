@@ -589,12 +589,50 @@ Get Started on Upwork →
 Get Started on Fiverr →
 </a>
 
-<a href="#contact" class="contact-btn email">
+<a href="#" id="openContact" class="contact-btn">
 <i class="bi bi-envelope"></i> Contact Me
 </a>
 
+
 </div>
 
+<div class="contact-modal" id="contactModal">
+
+  <div class="contact-box">
+
+    <button class="close-btn" id="closeContact">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+
+      <div class="input-group">
+<input type="text" required placeholder=" ">
+<label>Name</label>
+</div>
+
+<div class="input-group">
+<input type="email" required placeholder=" ">
+<label>Email</label>
+</div>
+
+<div class="input-group">
+<textarea required placeholder=" "></textarea>
+<label>Message</label>
+</div>
+
+      <button type="submit" class="send-btn" id="sendBtn">
+        <i class="bi bi-send"></i>
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
 </div>
 </section>
 <script src="script.js"></script>
