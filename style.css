@@ -2106,3 +2106,22 @@ padding:0 6px;
 
 color:#6366f1;
 }
+.hire-badge{
+display:inline-flex;
+align-items:center;
+gap:6px;
+padding:6px 12px;
+border-radius:20px;
+background:rgba(99,102,241,0.15);
+color:#a9aae2;
+font-weight:500;
+}
+
+.hire-badge i{
+animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.25)}
+}
