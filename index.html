@@ -741,6 +741,37 @@ custom AI solutions.
 <!-- ===========
 ai
 =========== -->
+<div id="assistantBtn">
+        <img src="/img/robot.png" alt="Chat Icon">
+    </div>
 
+    <div id="assistantPanel">
+        <div class="chat-header">
+            <div class="chat-user">
+                <img src="/img/robot.png" alt="Bot Avatar">
+                <div>
+                    <h4>Krishna</h4>
+                    <span class="status"><span class="dot"></span> Online with AI</span>
+                </div>
+            </div>
+            <button id="closeAssistant" class="close-btn">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <div id="chat-container">
+            <canvas id="particleCanvas"></canvas>
+            <div id="chatBox">
+                </div>
+        </div>
+
+        <div class="chat-input">
+            <input id="userInput" placeholder="Type a message..." autocomplete="off">
+            <button id="voiceBtn"><i class="bi bi-mic-fill"></i></button>
+            <button id="sendBtn" style="display: none;"><i class="bi bi-send-fill"></i></button>
+        </div>
+    </div>
+
+    <script src="chat_bot.js"></script>
 </body>
 </html>
