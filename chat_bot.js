@@ -145,7 +145,7 @@ messages:[
 {
 role:"system",
 content:`
-You are Krishna, the AI assistant for Amit Paul's portfolio website.
+You are Amit, the AI assistant for Amit Paul's portfolio website.
 
 Information about Amit:
 
@@ -343,4 +343,3 @@ animate();
 
 });
 
-    

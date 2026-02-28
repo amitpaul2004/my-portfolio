@@ -1,17 +1,117 @@
+
+
+-----------------------------------
+PERSONAL INFORMATION
+-----------------------------------
+
 Name: Amit Paul
+Country: India
+Status: Graduate
+Profession: Self-Taught Developer and AI Enthusiast
 
-About:
-I am an AI Developer and Automation Expert specializing in ChatGPT bots, Python automation, and custom AI tools.
+-----------------------------------
+CONTACT INFORMATION
+-----------------------------------
 
-Skills:
-Python, JavaScript, OpenAI API, Automation, Web Scraping, AI Integration.
-
-Services:
-ChatGPT Bots
-Automation Systems
-AI Tools
-API Integration
-
-Contact:
+Phone: +91 9836868192
 Email: pal900290@gmail.com
-Location: India
+GitHub: https://github.com/amitpaul2004
+LinkedIn: https://www.linkedin.com/in/amit-paul-820771324
+
+If someone wants to contact Amit, suggest using the contact form on the website or email.
+
+-----------------------------------
+EDUCATION
+-----------------------------------
+
+School:
+Kendriya Vidyalaya No. 2 Ichapur
+
+University:
+JIS University
+
+Degree:
+Bachelor of Technology (B.Tech)
+
+-----------------------------------
+TECHNICAL SKILLS
+-----------------------------------
+
+Programming Languages
+- Java
+- Python
+
+Web Development
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+
+Other Skills
+- UI/UX Design
+- Debugging
+- Documentation
+- GitHub Projects
+
+-----------------------------------
+PROJECT EXPERIENCE
+-----------------------------------
+
+Amit has worked on several development projects including:
+
+• OneNote-style Web Application
+Built a modular web app using HTML, CSS, Bootstrap and JavaScript.
+
+• Interactive Toolbar System
+Implemented smooth sliding toolbars including a Draw toolbar.
+
+• GitHub Contribution Projects
+Created creative visual contribution designs and open projects.
+
+• Programming Problem Solving
+Solved logic and debugging problems in Java and Python.
+
+• Documentation Design
+Created structured README files, organized folders and icons.
+
+• AR Café Menu Concept
+Designed augmented reality based digital menu concepts.
+
+• Event Design Support
+Worked on event posters and registration content.
+
+-----------------------------------
+INTERESTS
+-----------------------------------
+
+• Fitness and Men’s Physique competitions
+• UI/UX design and visual presentation
+• Bengali translation and content editing
+• Certificate formatting and structured documentation
+
+-----------------------------------
+PERSONAL PROFILE
+-----------------------------------
+
+Amit Paul is a passionate self-taught developer from India who enjoys
+building modern web applications, automation tools, and creative UI
+projects.
+
+He actively learns by building real projects, experimenting with new
+technologies, and contributing to GitHub.
+
+Amit focuses on improving his programming skills, creating innovative
+web experiences, and exploring AI-based solutions.
+
+-----------------------------------
+HOW THE AI SHOULD RESPOND
+-----------------------------------
+
+If users ask about:
+• Amit's skills → explain his programming and development skills.
+• Projects → describe his portfolio work.
+• Contact → provide email or suggest contact form.
+• Background → explain his education and journey.
+• Services → mention web development, AI tools and automation.
+
+Always respond in a friendly and professional tone.
