@@ -46,14 +46,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- BOT LOGIC ---
-    function botReply(text) {
-        document.getElementById("typing-id")?.remove();
-        const msg = text.toLowerCase();
-        let reply = "I am Krishna, your AI partner. I am ready to help!";
-        if (msg.includes("hi") || msg.includes("hello")) reply = "Hello! Krishna is here to assist you. ✨";
-        addMsg(reply, 'bot');
-    }
 
+async function botReply(text){
+
+document.getElementById("typing-id")?.remove();
+
+try{
+
+const response = await fetch("https://openrouter.ai/api/v1/chat/completions",{
+method:"POST",
+headers:{
+"Authorization":"Bearer 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",
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+model:"openai/gpt-3.5-turbo",
+messages:[
+{
+role:"system",
+content:"You are Krishna, a helpful AI assistant on Amit Paul's portfolio website."
+},
+{
+role:"user",
+content:text
+}
+]
+})
+});
+
+const data = await response.json();
+
+console.log(data);   // helps debugging
+
+if(data.choices && data.choices.length > 0){
+let reply = data.choices[0].message.content;
+addMsg(reply,"bot");
+}else{
+addMsg("AI is thinking... try again.", "bot");
+}
+
+}catch(error){
+
+console.error(error);
+addMsg("Connection error. Please check API key.", "bot");
+
+}
+
+}
     function sendMessage() {
         const text = input.value.trim();
         if (!text) return;
