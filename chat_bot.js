@@ -7,13 +7,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const voiceBtn = document.getElementById("voiceBtn");
     const sendBtn = document.getElementById("sendBtn");
 
+
+    let personalData = "";
+
+fetch("personal.txt")
+.then(res => res.text())
+.then(data => {
+    personalData = data;
+});
+
     let greetingTriggered = false;
 
     btn.onclick = () => {
         panel.classList.add("active");
         if (!greetingTriggered) {
             greetingTriggered = true;
-            setTimeout(() => addMsg("Hello! I'm Krishna. How can I help you today?", 'bot'), 600);
+            setTimeout(() => addMsg("Hello! I'm Amit. How can I help you today?", 'bot'), 600);
         }
     };
     closeBtn.onclick = () => panel.classList.remove("active");
@@ -64,7 +73,13 @@ model:"openai/gpt-3.5-turbo",
 messages:[
 {
 role:"system",
-content:"You are Krishna, a helpful AI assistant on Amit Paul's portfolio website."
+content:`You are Krishna, an AI assistant on Amit Paul's portfolio website.
+
+Use this information to answer:
+
+${personalData}
+
+Only answer using this information if relevant.`
 },
 {
 role:"user",

@@ -1,0 +1,17 @@
+Name: Amit Paul
+
+About:
+I am an AI Developer and Automation Expert specializing in ChatGPT bots, Python automation, and custom AI tools.
+
+Skills:
+Python, JavaScript, OpenAI API, Automation, Web Scraping, AI Integration.
+
+Services:
+ChatGPT Bots
+Automation Systems
+AI Tools
+API Integration
+
+Contact:
+Email: pal900290@gmail.com
+Location: India
