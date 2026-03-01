@@ -12,6 +12,13 @@ amit-mu.vercel.app/
 
 ---
 
+# 📃 read doc file
+```
+https://docs.google.com/document/d/1txFcXjpsOk1tz_Abbsmh4XzdbSLTKr-lTKGHV1hqzPM/edit?usp=sharing
+```
+
+---
+
 # 👨‍💻 About Me
 
 Hello! I'm **Amit Paul**, a self-taught developer from India passionate about building modern web applications, AI tools, and automation systems.
@@ -75,14 +82,6 @@ portfolio/
 │
 └── personal.txt
 ```
-
-portfolio/
-├── index.html
-├── style.css
-├── script.js
-├── doc_module.py         # 📄 Document Automation
-├── personal_info.txt     # 👤 AI Context & Resume Data
-└── contacts.csv
 
 ---
 
