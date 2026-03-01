@@ -57,19 +57,29 @@ Hello! I'm **Amit Paul**, a self-taught developer from India passionate about bu
 
 # 📂 Project Structure
 portfolio/
-│
+
 ├── index.html
 ├── style.css
 ├── script.js
-│
-├── chatbot/
-│ ├── chat_bot.js
-│
-├── assets/
-│ ├── images
-│ ├── icons
+├── chat_bot.js
+├──amit.pdf
+├──readme.md
+├── img/
+│    ├── images
+│    ├── icons
+├── audio/
+│    ├── intro.mp3
+│    ├── icons
 │
 └── personal.txt
+
+portfolio/
+├── index.html
+├── style.css
+├── script.js
+├── doc_module.py         # 📄 Document Automation
+├── personal_info.txt     # 👤 AI Context & Resume Data
+└── contacts.csv
 
 ---
 
