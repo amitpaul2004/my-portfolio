@@ -56,6 +56,8 @@ Hello! I'm **Amit Paul**, a self-taught developer from India passionate about bu
 ---
 
 # 📂 Project Structure
+
+```text
 portfolio/
 
 ├── index.html
@@ -72,6 +74,7 @@ portfolio/
 │    ├── icons
 │
 └── personal.txt
+```
 
 portfolio/
 ├── index.html
