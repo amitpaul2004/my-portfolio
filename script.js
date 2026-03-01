@@ -822,5 +822,155 @@ logo.style.transform = "scale(1) rotate(0)";
 });
 
 // ===========
-// ai
+// INTRO LOADER
 // ===========
+
+/* INTRO LOADER */
+window.addEventListener("load",()=>{
+
+/* SOUND */
+const sound=document.getElementById("introSound");
+if(sound) sound.play().catch(()=>{});
+
+/* AUTO CLOSE INTRO */
+
+setTimeout(()=>{
+document.getElementById("aiIntro").classList.add("hide");
+},3500);
+
+});
+const netCanvas=document.getElementById("networkCanvas");
+const netCtx=netCanvas.getContext("2d");
+
+netCanvas.width=window.innerWidth;
+netCanvas.height=window.innerHeight;
+
+let nodes=[];
+
+for(let i=0;i<70;i++){
+nodes.push({
+x:Math.random()*netCanvas.width,
+y:Math.random()*netCanvas.height,
+vx:(Math.random()-.5)*0.7,
+vy:(Math.random()-.5)*0.7
+});
+}
+
+function drawNetwork(){
+
+netCtx.clearRect(0,0,netCanvas.width,netCanvas.height);
+
+nodes.forEach(n=>{
+n.x+=n.vx;
+n.y+=n.vy;
+
+if(n.x<0||n.x>netCanvas.width) n.vx*=-1;
+if(n.y<0||n.y>netCanvas.height) n.vy*=-1;
+
+netCtx.beginPath();
+netCtx.arc(n.x,n.y,2,0,Math.PI*2);
+netCtx.fillStyle="#7c3aed";
+netCtx.fill();
+});
+
+for(let i=0;i<nodes.length;i++){
+for(let j=i;j<nodes.length;j++){
+
+let dx=nodes[i].x-nodes[j].x;
+let dy=nodes[i].y-nodes[j].y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+
+netCtx.beginPath();
+netCtx.strokeStyle="rgba(124,58,237,.2)";
+netCtx.moveTo(nodes[i].x,nodes[i].y);
+netCtx.lineTo(nodes[j].x,nodes[j].y);
+netCtx.stroke();
+
+}
+
+}
+}
+
+requestAnimationFrame(drawNetwork);
+}
+
+drawNetwork();
+const gridCanvas=document.getElementById("gridCanvas");
+const gctx=gridCanvas.getContext("2d");
+
+gridCanvas.width=window.innerWidth;
+gridCanvas.height=window.innerHeight;
+
+let offset=0;
+
+function drawGrid(){
+
+gctx.clearRect(0,0,gridCanvas.width,gridCanvas.height);
+
+gctx.strokeStyle="rgba(99,102,241,.15)";
+
+for(let x=0;x<gridCanvas.width;x+=60){
+
+gctx.beginPath();
+gctx.moveTo(x,0);
+gctx.lineTo(x,gridCanvas.height);
+gctx.stroke();
+
+}
+
+for(let y=0;y<gridCanvas.height;y+=60){
+
+gctx.beginPath();
+gctx.moveTo(0,y+offset);
+gctx.lineTo(gridCanvas.width,y+offset);
+gctx.stroke();
+
+}
+
+offset+=0.3;
+
+requestAnimationFrame(drawGrid);
+
+}
+
+drawGrid();
+document.addEventListener("DOMContentLoaded", function () {
+
+    const revealObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("active");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, { threshold: 0.2 });
+
+
+    document.querySelectorAll(".reveal").forEach(el => {
+        revealObserver.observe(el);
+    });
+
+});
+const sound = document.getElementById("introSound");
+
+document.addEventListener("click", () => {
+    sound.play().catch(()=>{});
+}, { once: true });
+window.addEventListener("load", () => {
+
+const sound = document.getElementById("introSound");
+
+setTimeout(() => {
+    sound.play().catch(()=>{});
+}, 500);
+
+});
