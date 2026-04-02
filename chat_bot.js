@@ -136,7 +136,7 @@ try{
 const response = await fetch("https://openrouter.ai/api/v1/chat/completions",{
 method:"POST",
 headers:{
-"Authorization":"Bearer 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",
+"Authorization":"Bearer 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",
 "Content-Type":"application/json"
 },
 body:JSON.stringify({
