@@ -1,4 +1,4 @@
-# 🚀 Amit Paul – AI Developer Portfolio
+# 🚀 Amit Paul – AI Developer Portfolio (V1)
 
 Welcome to my personal portfolio website.  
 This project showcases my work, skills, and projects in **AI development, automation, and web technologies**.
